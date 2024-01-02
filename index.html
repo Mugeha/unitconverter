@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta name="author" content="Mugeha">
+  <meta charset="utf-8">
+  <meta name="description" content="Password generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="C:\Users\25475\OneDrive\unitConverterProject\index.css">
+  <title>Unit Converter</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="container">
+        <h2 style="left:51px;">Metric/Imperial Unit Conversion</h2>
+        <input id="my-unit"></input>
+        <button id="convert-btn">Convert</button>
+        </div>
+        <div id="container2">
+          <div class="mine1">
+            <h4 style="color:#5A537B;font-size:20px;text-align:center;">Length(Meter/Feet)</h4>
+            <p id="length-el">0 meters = 0.000 feet | 0 feet = 0.000meters</p>
+            </div>
+            <div class="mine2">
+              <h4 style="color:#5A537B;font-size:20px;text-align:center;">Volume (Litres/Gallons)</h4>
+              <p id="volume-el">0 volume = 0.000 litres | 0 gallons = 0.000litres</p>
+              </div>
+              <div class="mine3">
+
+                <h4 style="color:#5A537B;font-size:20px;text-align:center;">Mass (Kilograms/Pounds)</h4>
+                <p id="mass-el">0 grams = 0.000 kgs | 0 pounds = 0.000 kgs</p>
+                </div>
+                </div>
+                </div>
+                <script>
+
+                let myUnitEl = document.getElementById("my-unit");
+                let convertEl = document.getElementById("convert-btn");
+                let lengthEl = document.getElementById("length-el");
+                let volumeEl = document.getElementById("volume-el");
+                let massEl = document.getElementById("mass-el");
+
+                const meterToFeet = 3.281
+                const litreToGallon = 0.264
+                const kiloToPound = 2.204
+
+                convertEl.addEventListener("click", function(){
+                  console.log("clicked");
+                  let baseValue = myUnitEl.value
+
+                  lengthEl.textContent = `${baseValue} meters = ${baseValue * meterToFeet} feet`
+                  volumeEl.textContent = `${baseValue} litres = ${baseValue * litreToGallon} gallons`
+                  massEl.textContent = `${baseValue} kilos = ${baseValue * kiloToPound} pounds`
+                  myUnitEl.value = ''
+                })
+
+                </script>
+                </body>
